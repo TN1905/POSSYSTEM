@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 4.8.0  -->
+<!-- 2023-08-17T15:12:18 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AllCustomers" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8e15d519-eab3-497d-b483-a5c1caac3ee0">
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="para_name" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT *
+FROM invoices where customer_name Like $P{para_name}]]>
+	</queryString>
+	<field name="invoice_id" class="java.lang.Integer"/>
+	<field name="invoice_date" class="java.lang.String"/>
+	<field name="invoice_time" class="java.lang.String"/>
+	<field name="customer_name" class="java.lang.String"/>
+	<field name="invoice_quantity" class="java.lang.Integer"/>
+	<field name="invoice_total_amount" class="java.lang.Double"/>
+	<field name="invoice_status" class="java.lang.String"/>
+	<field name="invoice_paid_amount" class="java.lang.Double"/>
+	<field name="balance" class="java.lang.Double"/>
+	<field name="invoice_payment_type" class="java.lang.String"/>
+	<field name="invoice_note" class="java.lang.String"/>
+	<field name="users_id" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="ddfdfc39-0356-4055-be6f-9d6663aa3be9"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[PO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="117" y="46" width="157" height="22" uuid="03412763-877e-49f0-8c90-7d3f1dc52bc4"/>
+				<text><![CDATA[Happy Software]]></text>
+			</staticText>
+			<image>
+				<reportElement x="450" y="-18" width="90" height="88" uuid="50503222-cfb2-4931-a862-ab81876cc2eb"/>
+				<imageExpression><![CDATA["C:/Users/ADMIN/Downloads/Logo_Soft_drink.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="221" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="91" width="50" height="15" uuid="1d4665fa-f9d0-4209-b7c0-277b3f239bb2"/>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="224" y="91" width="50" height="15" uuid="7ebf6bd8-b40f-4b1f-977e-583ad0d0d11d"/>
+				<text><![CDATA[STATUS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="410" y="10" width="50" height="15" uuid="998a64f4-896d-4b4d-9518-ffa155939844"/>
+				<text><![CDATA[NOTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="224" y="170" width="80" height="15" uuid="e0bdaf3c-73ff-4811-b423-f706286a0e77"/>
+				<text><![CDATA[BALANCE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="170" width="112" height="15" uuid="7e3a525c-9dff-4881-b5c4-e2889f8a0376"/>
+				<text><![CDATA[PAYMENT TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="130" width="100" height="15" uuid="43707311-2f5d-4280-aa8c-93a168797a16"/>
+				<text><![CDATA[TIME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="410" y="50" width="50" height="15" uuid="9042af93-8697-4ba7-8497-c26db127997a"/>
+				<text><![CDATA[USERID]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="210" width="555" height="1" uuid="30093aa1-3dd7-4eea-9cc9-e183637af8f4"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="10" width="80" height="15" uuid="196e499a-54c0-4988-8c99-5bd48ffc4fa8"/>
+				<text><![CDATA[PO ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="0" y="50" width="79" height="15" uuid="452f5757-7a73-4ad7-94fe-0724dc5fa4e6"/>
+				<text><![CDATA[SUPPLIERID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="224" y="10" width="66" height="15" uuid="bcfbffc3-a626-4e6f-b533-bbfd38cc449b"/>
+				<text><![CDATA[QUANTITY]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="9" width="555" height="1" uuid="2c4ebb21-8745-45a1-a9ad-477acaac72cb"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="224" y="50" width="106" height="15" uuid="7d6d62f3-07e2-4759-b157-b26a49fd6965"/>
+				<text><![CDATA[TOTAL AMOUNT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="410" y="91" width="79" height="15" uuid="06b83957-7b78-4af4-a42f-8403520ea5c5"/>
+				<text><![CDATA[PRODUCTID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="28" width="123" height="22" uuid="bb3ca503-9e95-40cb-87bd-e3ef0c319206"/>
+				<textFieldExpression><![CDATA[$F{purchase_order_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="70" width="100" height="15" uuid="f76576e9-8c06-46cc-a82c-39f7a1624ca1"/>
+				<textFieldExpression><![CDATA[$F{supplier_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="110" width="116" height="14" uuid="f239066f-a7ee-4f71-adb5-24797362005f"/>
+				<textFieldExpression><![CDATA[$F{purchase_order_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="149" width="123" height="18" uuid="2072496b-7ee5-416a-a7d4-75a3352eee50"/>
+				<textFieldExpression><![CDATA[$F{purchase_order_time}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="185" width="130" height="19" uuid="f7d9bbd2-f1c4-46f2-9843-40ec6b5af3bd"/>
+				<textFieldExpression><![CDATA[$F{purchase_payment_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="224" y="28" width="127" height="18" uuid="73606592-add3-4943-b9b5-417bacfe3927"/>
+				<textFieldExpression><![CDATA[$F{purchase_quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="224" y="70" width="131" height="16" uuid="7127ac6f-a246-4666-bbac-42025a088bd4"/>
+				<textFieldExpression><![CDATA[$F{purchase_total_amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="224" y="110" width="100" height="14" uuid="5d521833-91e2-4191-a9e2-fc0f1e41f8fb"/>
+				<textFieldExpression><![CDATA[$F{purchase_status}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="224" y="130" width="86" height="15" uuid="fa0d96ab-5c82-4c56-a4ff-aef7d7dd0665"/>
+				<text><![CDATA[PAID AMOUNT]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="225" y="149" width="124" height="14" uuid="723de697-626d-44cd-88d2-353381f05c93"/>
+				<textFieldExpression><![CDATA[$F{purchase_paid_amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="225" y="185" width="124" height="18" uuid="f8f52d29-7a68-4653-bf79-d60c239e3129"/>
+				<textFieldExpression><![CDATA[$F{purchase_due_balance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="30" width="100" height="15" uuid="fb380831-1618-48a8-b2cd-2c63007ff64c"/>
+				<textFieldExpression><![CDATA[$F{purchase_note}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="68" width="100" height="18" uuid="0d596bf3-4199-4346-8008-914c585d0cba"/>
+				<textFieldExpression><![CDATA[$F{users_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="108" width="100" height="19" uuid="b909572a-41b8-4583-ae63-c6322268136d"/>
+				<textFieldExpression><![CDATA[$F{product_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="56" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="c9e9a989-76ae-4c92-a08c-dba3c3185f04"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="736cac2d-8f9a-48bb-b4e7-09302ce0e313"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="c49bc611-71b3-4860-8112-76288860b48d"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
